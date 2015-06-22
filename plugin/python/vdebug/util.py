@@ -135,10 +135,8 @@ class FilePath:
                     ret = ret.replace(local,remote)
                     break
 
-        if ret[2] == "\\":
-            ret = ret.replace("\\","/")
-
         if self.is_win:
+            ret = ret.replace("\\","/")
             return "file:///"+ret
         else:
             return "file://"+ret
